@@ -104,13 +104,13 @@ class Mail extends \Zend_Application_Resource_Mail
 			$message->setReturnPath($returnPath);
 		}
 
-		$headers    = $message->getHeaders();
-		$senderName = strip_tags($headers['From'][0], $message->getFrom());
-		$userName   = $this->smtpHelper->getConfig(self::CONFIGURATION_GROUP_SMTP, 'username');
-		if ($userName && $senderName) {
-			$message->clearFrom();
-			$message->setFrom($userName, $senderName);
-		}
+		// $headers    = $message->getHeaders();
+		// $senderName = strip_tags($headers['From'][0], $message->getFrom());
+		// $userName   = $this->smtpHelper->getConfig(self::CONFIGURATION_GROUP_SMTP, 'username');
+		// if ($userName && $senderName) {
+		// 	$message->clearFrom();
+		// 	$message->setFrom($userName, $senderName);
+		// }
 
 		return $message;
 	}
